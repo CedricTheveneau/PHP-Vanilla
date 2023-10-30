@@ -1,0 +1,19 @@
+# Le serveur doit suivre liens symboliques
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'url
+
+RewriteEngine on
+
+# Règles de réécriture d'url
+
+# Cette url retourne la page qui liste les voitures
+RewriteRule ^$ index.php?class=CarController&method=carList 
+# Cette url retourne la page qui liste les voitures
+RewriteRule ^car-list$ index.php?class=CarController&method=carList
+# # Cette url retourne la page qui contient le formulaire d'ajout de voiture
+RewriteRule ^form-add-car$ index.php?class=CarController&method=addCarForm
+# Cette url éxécute l'ajout de voiture au moment de la validation du formulaire
+RewriteRule ^add-car-action$ index.php?class=CarController&method=addCar
+# Cette url éxécute la suppression de voiture au moment ou l'on clique sur un bouton 'Supprimer'
+RewriteRule ^remove-car-action$ index.php?class=CarController&method=removeCar

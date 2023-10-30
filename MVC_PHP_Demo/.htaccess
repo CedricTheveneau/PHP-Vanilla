@@ -1,0 +1,14 @@
+# Le serveur doit suivre liens symboliques
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'url
+
+RewriteEngine on
+
+# Règles de réécriture d'url
+
+RewriteRule ^tasklist$ index.php?class=TaskController&method=listTasksAction
+RewriteRule ^add-task$ index.php?class=TaskController&method=formAddTaskAction
+RewriteRule ^add-task-action$ index.php?class=TaskController&method=addTaskAction
+RewriteRule ^complete-task$ index.php?class=TaskController&method=completedTaskAction
+RewriteRule ^remove-task$ index.php?class=TaskController&method=removeTaskAction

@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  > ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    > li {
+      > form {
+        > button {
+          cursor: pointer;
+          border: transparent;
+          border-radius: 6px;
+          padding: 5px 8px;
+          background-color: #00000080;
+          color: #f6f6f8;
+          transition: background-color 250ms ease-in-out,
+            color 250ms ease-in-out;
+          > a {
+            text-decoration: none;
+            color: #f6f6f8;
+            transition: color 250ms ease-in-out;
+          }
+        }
+        > button:hover {
+          background-color: #f6f6f8;
+          color: #00000080;
+          > a {
+            text-decoration: none;
+            color: #00000080;
+          }
+        }
+      }
+      > button {
+        cursor: pointer;
+        border: transparent;
+        border-radius: 6px;
+        padding: 5px 8px;
+        background-color: #00000080;
+        color: #f6f6f8;
+        transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+        > a {
+          text-decoration: none;
+          color: #f6f6f8;
+          transition: color 250ms ease-in-out;
+        }
+      }
+      > button:hover {
+        background-color: #f6f6f8;
+        color: #00000080;
+        > a {
+          text-decoration: none;
+          color: #00000080;
+        }
+      }
+    }
+  }
+}

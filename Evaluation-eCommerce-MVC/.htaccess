@@ -1,0 +1,46 @@
+# Le serveur doit suivre liens symboliques
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'url
+
+RewriteEngine on
+
+# Règles de réécriture d'url
+
+#todo VUES
+
+
+#? HOME
+# Cette url retourne la page qui liste les produits
+RewriteRule ^products$ index.php?class=ProductController&method=productList 
+# Cette url retourne la page de détails d'un produit
+RewriteRule ^details$ index.php?class=ProductController&method=productDetails
+# Cette url retourne la page de détails d'un produit
+RewriteRule ^cart$ index.php?class=CartController&method=productList
+
+
+#? ADMIN
+# Cette url retourne la page qui liste les produits
+RewriteRule ^admin$ index.php?class=AdminController&method=adminProductList
+# # Cette url retourne la page qui contient le formulaire d'ajout de produit
+RewriteRule ^form-add-product$ index.php?class=AdminController&method=addProductForm
+# # Cette url retourne la page qui contient le formulaire de modification de produit
+RewriteRule ^form-modify-product$ index.php?class=AdminController&method=modifyProductForm
+
+#todo ACTIONS
+
+
+#? HOME
+# Cette url éxécute l'ajout de produit au moment de la validation du formulaire
+RewriteRule ^add-product-action$ index.php?class=AdminController&method=addProduct
+# Cette url éxécute la suppression de produit au moment ou l'on clique sur un bouton 'Supprimer'
+RewriteRule ^remove-product-action$ index.php?class=AdminController&method=removeProduct
+# Cette url éxécute la modification de produit au moment de la validation du formulaire
+RewriteRule ^modify-product-action$ index.php?class=AdminController&method=modifyProduct
+# Cette url éxécute l'ajout de produit au moment de la validation du formulaire
+RewriteRule ^add-to-cart-action$ index.php?class=CartController&method=addProduct
+# Cette url éxécute la suppression de produit au moment de la validation du formulaire
+RewriteRule ^remove-from-cart-action$ index.php?class=CartController&method=removeProduct
+
+
+#? ADMIN

@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.movies {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  > .movieCard {
+    display: grid;
+    gap: 10px;
+    > img {
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      width: 100%;
+    }
+    > p {
+      width: 100%;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+    }
+    > p:nth-child(2) {
+      font-weight: 900;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+    > .crudRow {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      > form {
+        > button {
+          padding: 5px 10px;
+          border: transparent;
+          border-radius: 6px;
+          cursor: pointer;
+          color: #f6f6f8;
+          transition: background-color 250ms ease-in-out;
+        }
+      }
+      > form:nth-child(1) {
+        > button {
+          background-color: #cb3333b5;
+        }
+        > button:hover {
+          background-color: #cb3333;
+        }
+      }
+      > form:nth-child(2) {
+        > button {
+          background-color: #33cb35b5;
+        }
+        > button:hover {
+          background-color: #33cb35;
+        }
+      }
+      > form:nth-child(3) {
+        > button {
+          background-color: #3354cbb5;
+        }
+        > button:hover {
+          background-color: #3354cb;
+        }
+      }
+    }
+  }
+}

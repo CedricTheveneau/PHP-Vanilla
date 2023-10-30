@@ -1,0 +1,42 @@
+# Le serveur doit suivre liens symboliques
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'url
+
+RewriteEngine on
+
+# Règles de réécriture d'url
+
+# Shows the book list
+RewriteRule ^$ index.php?class=BookController&method=bookList
+RewriteRule ^books$ index.php?class=BookController&method=bookList
+# Shows the form to add a book
+RewriteRule ^add-book$ index.php?class=BookController&method=formAddBook
+# Adds the book to the list
+RewriteRule ^add-book-action$ index.php?class=BookController&method=addBook
+# Removes the book from the list
+RewriteRule ^remove-book$ index.php?class=BookController&method=removeBook
+# Shows the form to modify a book
+RewriteRule ^modify-book$ index.php?class=BookController&method=formModifyBook
+# Modifies the book
+RewriteRule ^modify-book-action$ index.php?class=BookController&method=modifyBook
+
+
+# Shows the adherents list
+RewriteRule ^adherents$ index.php?class=AdherentController&method=adherentList
+# Shows the form to add an adherent
+RewriteRule ^add-adherent$ index.php?class=AdherentController&method=formAddAdherent
+# Adds the adherent to the list
+RewriteRule ^add-adherent-action$ index.php?class=AdherentController&method=addAdherent
+# Removes the adherent to the list
+RewriteRule ^remove-adherent$ index.php?class=AdherentController&method=removeAdherent
+
+
+# Shows the borrowed books
+RewriteRule ^borrowed-books$ index.php?class=BookController&method=borrowedBookList
+# Shows the form to borrow a book
+RewriteRule ^borrow-book$ index.php?class=BookController&method=formBorrowBook
+# Sets the book as borrowed
+RewriteRule ^add-adherent-action$ index.php?class=AdherentController&method=addBorrowedBook
+# Removes a book from the borrowed books list
+RewriteRule ^give-back-book$ index.php?class=BookController&method=giveBackBook
